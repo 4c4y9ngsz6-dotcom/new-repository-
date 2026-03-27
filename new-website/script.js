@@ -33,14 +33,22 @@ const StorageManager = {
 
 // ========== LOAD THEME PREFERENCE ==========
 function loadThemePreference() {
-    const savedTheme = StorageManager.load('theme') || 'light';
-    console.log('Loading theme preference:', savedTheme);
+    const savedTheme = StorageManager.load('theme'); // Can be null for 'auto'
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-theme');
-        console.log('Dark theme added on load:', document.body.classList);
-    } else {
+        updateThemeButtons('dark');
+    } else if (savedTheme === 'light') {
         document.body.classList.remove('dark-theme');
+        updateThemeButtons('light');
+    } else { // savedTheme is null or undefined, meaning 'auto'
+        if (prefersDark) {
+            document.body.classList.add('dark-theme');
+        } else {
+            document.body.classList.remove('dark-theme');
+        }
+        updateThemeButtons('auto');
     }
 }
 
@@ -54,6 +62,8 @@ function initializeApp() {
     setupNavigation();
     setupButtons();
     setupSearch();
+    // Ensure theme buttons are updated on initial load
+    updateThemeButtons(StorageManager.load('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
 }
 
 // ========== NAVIGATION ==========
@@ -225,12 +235,34 @@ function toggleTheme(theme) {
         body.classList.add('dark-theme');
         StorageManager.save('theme', 'dark');
         showNotification('✓ تم تفعيل الموضوع المظلم', 'success');
-        console.log('Dark theme applied:', document.body.classList);
     } else if (theme === 'light') {
         body.classList.remove('dark-theme');
         StorageManager.save('theme', 'light');
         showNotification('✓ تم تفعيل الموضوع الفاتح', 'success');
-        console.log('Light theme applied:', document.body.classList);
+    } else if (theme === 'auto') {
+        StorageManager.remove('theme'); // Let OS/browser decide
+        body.classList.remove('dark-theme'); // Ensure no dark theme class
+        showNotification('✓ تم تفعيل الموضوع التلقائي', 'success');
+    }
+    
+    updateThemeButtons(theme);
+}
+
+function updateThemeButtons(activeTheme) {
+    const lightButton = document.querySelector('.settings-section#appearance .btn-primary');
+    const darkButton = document.querySelector('.settings-section#appearance .btn-secondary:nth-of-type(1)');
+    const autoButton = document.querySelector('.settings-section#appearance .btn-secondary:nth-of-type(2)');
+
+    // Remove active from all theme buttons
+    [lightButton, darkButton, autoButton].forEach(btn => btn?.classList.remove('active'));
+
+    // Add active to the current theme button
+    if (activeTheme === 'light') {
+        lightButton?.classList.add('active');
+    } else if (activeTheme === 'dark') {
+        darkButton?.classList.add('active');
+    } else if (activeTheme === 'auto') {
+        autoButton?.classList.add('active');
     }
 }
 
