@@ -44,274 +44,287 @@
         <!-- Top Header -->
         <header class="header">
             <div class="header-left">
-                <h1>إدارة المشاريع</h1>
-                <p class="subtitle">تتبع وتنظيم جميع مشاريعك</p>
+                <h1>المشاريع</h1>
+                <p class="subtitle">إدارة القائمة الشاملة للمشاريع النشطة</p>
             </div>
             <div class="header-right">
-                <div class="filters">
-                    <button class="btn-filter active">الكل</button>
-                    <button class="btn-filter">قيد التنفيذ</button>
-                    <button class="btn-filter">مكتمل</button>
-                    <button class="btn-filter">متأخر</button>
-                </div>
+                <input type="text" placeholder="بحث عن مشروع..." class="search-input">
                 <button class="btn btn-primary">+ مشروع جديد</button>
             </div>
         </header>
 
-        <!-- Projects Grid -->
-        <section class="projects-section">
+        <!-- Projects Section -->
+        <section class="dashboard-content">
+            <!-- Illustration Section -->
+            <div class="projects-hero">
+                <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="projectGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.1" />
+                            <stop offset="100%" style="stop-color:#ec4899;stop-opacity:0.1" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="500" height="200" fill="url(#projectGrad)" rx="16"/>
+                    
+                    <!-- Project Cards Illustration -->
+                    <rect x="30" y="40" width="80" height="120" fill="#6366f1" opacity="0.8" rx="8"/>
+                    <rect x="130" y="30" width="80" height="130" fill="#ec4899" opacity="0.7" rx="8"/>
+                    <rect x="230" y="50" width="80" height="110" fill="#06b6d4" opacity="0.8" rx="8"/>
+                    <rect x="330" y="35" width="80" height="125" fill="#10b981" opacity="0.7" rx="8"/>
+                    
+                    <!-- Progress indicators -->
+                    <line x1="30" y1="155" x2="110" y2="155" stroke="#ffffff" stroke-width="3" opacity="0.5"/>
+                    <line x1="130" y1="160" x2="210" y2="160" stroke="#ffffff" stroke-width="3" opacity="0.5"/>
+                </svg>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filters">
+                <button class="btn-filter active" onclick="filterProjects('all')">الكل</button>
+                <button class="btn-filter" onclick="filterProjects('in-progress')">قيد الإنجاز</button>
+                <button class="btn-filter" onclick="filterProjects('completed')">مكتمل</button>
+                <button class="btn-filter" onclick="filterProjects('delayed')">متأخر</button>
+            </div>
+
+            <!-- Projects Grid -->
             <div class="projects-grid">
-                <!-- Project Card 1 -->
-                <div class="project-card">
+                <!-- Project 1 -->
+                <div class="card project-card">
                     <div class="project-header">
-                        <h3>تطوير تطبيق الجوال</h3>
-                        <span class="status-badge status-active">قيد التنفيذ</span>
+                        <div class="project-icon">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="50" fill="#6366f1" opacity="0.1"/>
+                                <g transform="translate(30, 30)">
+                                    <rect width="40" height="40" fill="#6366f1" rx="4"/>
+                                    <rect x="45" y="0" width="15" height="40" fill="#ec4899" rx="2"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="status-badge status-active">قيد الإنجاز</span>
                     </div>
-                    <p class="project-desc">تطوير تطبيق iOS و Android شامل</p>
-                    
+                    <h3 class="project-title">منصة التجارة الإلكترونية</h3>
+                    <p class="project-desc">تطوير منصة متكاملة للبيع الإلكتروني مع نظام دفع آمن</p>
                     <div class="project-meta">
                         <div class="meta-item">
-                            <span class="label">الموعد النهائي:</span>
-                            <span class="value">15 مايو 2026</span>
+                            <span class="label">الموعد النهائي</span>
+                            <span class="value">15 أبريل 2026</span>
                         </div>
                         <div class="meta-item">
-                            <span class="label">الأولوية:</span>
-                            <span class="priority high">عالية</span>
+                            <span class="label">الأولوية</span>
+                            <span class="value priority high">عالية جداً</span>
                         </div>
                     </div>
-
-                    <div class="project-progress">
-                        <div class="progress-label">
-                            <span>التقدم</span>
-                            <span class="percent">65%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 65%"></div>
-                        </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%;"></div>
                     </div>
-
-                    <div class="project-footer">
-                        <div class="team-section">
-                            <span class="team-label">الفريق:</span>
-                            <div class="team-avatars">
-                                <div class="avatar-tiny">👨‍💻</div>
-                                <div class="avatar-tiny">👩‍💼</div>
-                                <div class="avatar-tiny">👨‍🎨</div>
-                            </div>
-                        </div>
-                        <button class="btn-mini">التفاصيل</button>
+                    <span class="progress-text">75% مكتمل</span>
+                    <div class="project-team">
+                        <div class="team-avatar">👨‍💼</div>
+                        <div class="team-avatar">👩‍💼</div>
+                        <div class="team-avatar">👨‍🔧</div>
                     </div>
+                    <button class="btn btn-secondary full-width">عرض التفاصيل</button>
                 </div>
 
-                <!-- Project Card 2 -->
-                <div class="project-card">
+                <!-- Project 2 -->
+                <div class="card project-card">
                     <div class="project-header">
-                        <h3>تحديث المنصة</h3>
-                        <span class="status-badge status-active">قيد التنفيذ</span>
-                    </div>
-                    <p class="project-desc">تحسين الأداء والميزات الجديدة</p>
-                    
-                    <div class="project-meta">
-                        <div class="meta-item">
-                            <span class="label">الموعد النهائي:</span>
-                            <span class="value">30 مارس 2026</span>
+                        <div class="project-icon">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="50" fill="#ec4899" opacity="0.1"/>
+                                <g transform="translate(25, 25)">
+                                    <circle cx="25" cy="25" r="25" fill="none" stroke="#ec4899" stroke-width="3"/>
+                                    <path d="M 25 10 Q 35 25 25 40 Q 15 25 25 10" fill="#ec4899"/>
+                                </g>
+                            </svg>
                         </div>
-                        <div class="meta-item">
-                            <span class="label">الأولوية:</span>
-                            <span class="priority medium">متوسطة</span>
-                        </div>
-                    </div>
-
-                    <div class="project-progress">
-                        <div class="progress-label">
-                            <span>التقدم</span>
-                            <span class="percent">42%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 42%"></div>
-                        </div>
-                    </div>
-
-                    <div class="project-footer">
-                        <div class="team-section">
-                            <span class="team-label">الفريق:</span>
-                            <div class="team-avatars">
-                                <div class="avatar-tiny">👨‍💻</div>
-                                <div class="avatar-tiny">👨‍🎨</div>
-                            </div>
-                        </div>
-                        <button class="btn-mini">التفاصيل</button>
-                    </div>
-                </div>
-
-                <!-- Project Card 3 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>تكامل الدفع</h3>
                         <span class="status-badge status-completed">مكتمل</span>
                     </div>
-                    <p class="project-desc">إضافة بوابات دفع متعددة</p>
-                    
+                    <h3 class="project-title">تطوير تطبيق الجوال</h3>
+                    <p class="project-desc">تصميم وتطوير تطبيق جوال iOS وAndroid</p>
                     <div class="project-meta">
                         <div class="meta-item">
-                            <span class="label">الموعد النهائي:</span>
+                            <span class="label">الموعد النهائي</span>
                             <span class="value">20 مارس 2026</span>
                         </div>
                         <div class="meta-item">
-                            <span class="label">الأولوية:</span>
-                            <span class="priority high">عالية</span>
+                            <span class="label">الأولوية</span>
+                            <span class="value priority high">عالية</span>
                         </div>
                     </div>
-
-                    <div class="project-progress">
-                        <div class="progress-label">
-                            <span>التقدم</span>
-                            <span class="percent">100%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 100%"></div>
-                        </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%;"></div>
                     </div>
-
-                    <div class="project-footer">
-                        <div class="team-section">
-                            <span class="team-label">الفريق:</span>
-                            <div class="team-avatars">
-                                <div class="avatar-tiny">👨‍💻</div>
-                                <div class="avatar-tiny">👩‍💼</div>
-                                <div class="avatar-tiny">👨‍🏭</div>
-                                <div class="avatar-tiny">+1</div>
-                            </div>
-                        </div>
-                        <button class="btn-mini">التفاصيل</button>
+                    <span class="progress-text">100% مكتمل</span>
+                    <div class="project-team">
+                        <div class="team-avatar">👩‍💻</div>
+                        <div class="team-avatar">👨‍🎨</div>
                     </div>
+                    <button class="btn btn-secondary full-width">عرض التفاصيل</button>
                 </div>
 
-                <!-- Project Card 4 -->
-                <div class="project-card">
+                <!-- Project 3 -->
+                <div class="card project-card">
                     <div class="project-header">
-                        <h3>تحسين الأمان</h3>
-                        <span class="status-badge status-active">قيد التنفيذ</span>
+                        <div class="project-icon">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="50" fill="#06b6d4" opacity="0.1"/>
+                                <g transform="translate(30, 30)">
+                                    <rect width="12" height="40" fill="#06b6d4"/>
+                                    <rect x="20" y="10" width="12" height="30" fill="#06b6d4"/>
+                                    <rect x="40" y="20" width="12" height="20" fill="#06b6d4"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="status-badge status-pending">متأخر</span>
                     </div>
-                    <p class="project-desc">فحص أمان شامل وتحديثات</p>
-                    
+                    <h3 class="project-title">نظام إدارة المحتوى</h3>
+                    <p class="project-desc">بناء نظام متقدم لإدارة المحتوى والمستخدمين</p>
                     <div class="project-meta">
                         <div class="meta-item">
-                            <span class="label">الموعد النهائي:</span>
-                            <span class="value">10 أبريل 2026</span>
+                            <span class="label">الموعد النهائي</span>
+                            <span class="value">10 مارس 2026</span>
                         </div>
                         <div class="meta-item">
-                            <span class="label">الأولوية:</span>
-                            <span class="priority high">عالية</span>
+                            <span class="label">الأولوية</span>
+                            <span class="value priority medium">متوسطة</span>
                         </div>
                     </div>
-
-                    <div class="project-progress">
-                        <div class="progress-label">
-                            <span>التقدم</span>
-                            <span class="percent">55%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 55%"></div>
-                        </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 45%;"></div>
                     </div>
-
-                    <div class="project-footer">
-                        <div class="team-section">
-                            <span class="team-label">الفريق:</span>
-                            <div class="team-avatars">
-                                <div class="avatar-tiny">👨‍💻</div>
-                            </div>
-                        </div>
-                        <button class="btn-mini">التفاصيل</button>
+                    <span class="progress-text">45% مكتمل</span>
+                    <div class="project-team">
+                        <div class="team-avatar">👨‍💼</div>
+                        <div class="team-avatar">👩‍🔧</div>
+                        <div class="team-avatar">👨‍💻</div>
+                        <div class="team-avatar">👩‍💻</div>
                     </div>
+                    <button class="btn btn-secondary full-width">عرض التفاصيل</button>
                 </div>
 
-                <!-- Project Card 5 -->
-                <div class="project-card">
+                <!-- Project 4 -->
+                <div class="card project-card">
                     <div class="project-header">
-                        <h3>توثيق API</h3>
-                        <span class="status-badge status-active">قيد التنفيذ</span>
+                        <div class="project-icon">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="50" fill="#10b981" opacity="0.1"/>
+                                <g transform="translate(25, 25)">
+                                    <path d="M 25 0 L 50 50 L 0 50 Z" fill="#10b981"/>
+                                    <circle cx="25" cy="35" r="5" fill="#ffffff"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="status-badge status-active">قيد الإنجاز</span>
                     </div>
-                    <p class="project-desc">إنشاء وتحديث توثيق شامل</p>
-                    
+                    <h3 class="project-title">منصة التحليلات</h3>
+                    <p class="project-desc">بناء لوحة تحكم متقدمة لتحليل بيانات العملاء</p>
                     <div class="project-meta">
                         <div class="meta-item">
-                            <span class="label">الموعد النهائي:</span>
-                            <span class="value">05 أبريل 2026</span>
+                            <span class="label">الموعد النهائي</span>
+                            <span class="value">8 مايو 2026</span>
                         </div>
                         <div class="meta-item">
-                            <span class="label">الأولوية:</span>
-                            <span class="priority low">منخفضة</span>
+                            <span class="label">الأولوية</span>
+                            <span class="value priority medium">متوسطة</span>
                         </div>
                     </div>
-
-                    <div class="project-progress">
-                        <div class="progress-label">
-                            <span>التقدم</span>
-                            <span class="percent">80%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 80%"></div>
-                        </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%;"></div>
                     </div>
-
-                    <div class="project-footer">
-                        <div class="team-section">
-                            <span class="team-label">الفريق:</span>
-                            <div class="team-avatars">
-                                <div class="avatar-tiny">👨‍💻</div>
-                                <div class="avatar-tiny">👨‍🏫</div>
-                            </div>
-                        </div>
-                        <button class="btn-mini">التفاصيل</button>
+                    <span class="progress-text">60% مكتمل</span>
+                    <div class="project-team">
+                        <div class="team-avatar">👨‍💻</div>
+                        <div class="team-avatar">👩‍🎓</div>
                     </div>
+                    <button class="btn btn-secondary full-width">عرض التفاصيل</button>
                 </div>
 
-                <!-- Project Card 6 -->
-                <div class="project-card">
+                <!-- Project 5 -->
+                <div class="card project-card">
                     <div class="project-header">
-                        <h3>توسع السوق</h3>
-                        <span class="status-badge status-pending">قيد الانتظار</span>
+                        <div class="project-icon">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="50" fill="#f59e0b" opacity="0.1"/>
+                                <g transform="translate(30, 30)">
+                                    <rect width="40" height="40" fill="none" stroke="#f59e0b" stroke-width="2" rx="4"/>
+                                    <circle cx="20" cy="20" r="4" fill="#f59e0b"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="status-badge status-active">قيد الإنجاز</span>
                     </div>
-                    <p class="project-desc">دخول أسواق جديدة وشراكات</p>
-                    
+                    <h3 class="project-title">نظام الموارد البشرية</h3>
+                    <p class="project-desc">تطوير منصة شاملة لإدارة الموارد البشرية والرواتب</p>
                     <div class="project-meta">
                         <div class="meta-item">
-                            <span class="label">الموعد النهائي:</span>
+                            <span class="label">الموعد النهائي</span>
                             <span class="value">30 يونيو 2026</span>
                         </div>
                         <div class="meta-item">
-                            <span class="label">الأولوية:</span>
-                            <span class="priority high">عالية</span>
+                            <span class="label">الأولوية</span>
+                            <span class="value priority low">منخفضة</span>
                         </div>
                     </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 35%;"></div>
+                    </div>
+                    <span class="progress-text">35% مكتمل</span>
+                    <div class="project-team">
+                        <div class="team-avatar">👨‍🔧</div>
+                        <div class="team-avatar">👩‍🔧</div>
+                        <div class="team-avatar">👨‍💼</div>
+                    </div>
+                    <button class="btn btn-secondary full-width">عرض التفاصيل</button>
+                </div>
 
-                    <div class="project-progress">
-                        <div class="progress-label">
-                            <span>التقدم</span>
-                            <span class="percent">15%</span>
+                <!-- Project 6 -->
+                <div class="card project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="50" fill="#8b5cf6" opacity="0.1"/>
+                                <g transform="translate(30, 30)">
+                                    <path d="M 0 20 Q 20 0 40 20 Q 20 40 0 20" fill="#8b5cf6"/>
+                                    <path d="M 0 20 Q 20 0 40 20" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+                                </g>
+                            </svg>
                         </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 15%"></div>
+                        <span class="status-badge status-pending">مخطط</span>
+                    </div>
+                    <h3 class="project-title">تطوير API الخارجية</h3>
+                    <p class="project-desc">بناء واجهات برمجية آمنة للتكامل مع أطراف ثالثة</p>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="label">الموعد النهائي</span>
+                            <span class="value">15 يوليو 2026</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label">الأولوية</span>
+                            <span class="value priority medium">متوسطة</span>
                         </div>
                     </div>
-
-                    <div class="project-footer">
-                        <div class="team-section">
-                            <span class="team-label">الفريق:</span>
-                            <div class="team-avatars">
-                                <div class="avatar-tiny">👩‍💼</div>
-                                <div class="avatar-tiny">👨‍🏢</div>
-                            </div>
-                        </div>
-                        <button class="btn-mini">التفاصيل</button>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 10%;"></div>
                     </div>
+                    <span class="progress-text">10% مكتمل</span>
+                    <div class="project-team">
+                        <div class="team-avatar">👨‍💻</div>
+                    </div>
+                    <button class="btn btn-secondary full-width">عرض التفاصيل</button>
                 </div>
             </div>
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+        function filterProjects(status) {
+            // Update active button
+            document.querySelectorAll('.btn-filter').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 </html>

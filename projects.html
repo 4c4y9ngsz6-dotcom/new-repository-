@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المشاريع - منصة إدارة المشاريع</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon">📊</div>
+                <span>ProManage</span>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <span class="icon">📈</span>
+                <span>لوحة التحكم</span>
+            </a>
+            <a href="projects.html" class="nav-item active">
+                <span class="icon">📁</span>
+                <span>المشاريع</span>
+            </a>
+            <a href="tasks.html" class="nav-item">
+                <span class="icon">✓</span>
+                <span>المهام</span>
+            </a>
+            <a href="insights.html" class="nav-item">
+                <span class="icon">💡</span>
+                <span>التحليلات</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <span class="icon">⚙️</span>
+                <span>الإعدادات</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <!-- Top Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>إدارة المشاريع</h1>
+                <p class="subtitle">تتبع وتنظيم جميع مشاريعك</p>
+            </div>
+            <div class="header-right">
+                <div class="filters">
+                    <button class="btn-filter active">الكل</button>
+                    <button class="btn-filter">قيد التنفيذ</button>
+                    <button class="btn-filter">مكتمل</button>
+                    <button class="btn-filter">متأخر</button>
+                </div>
+                <button class="btn btn-primary">+ مشروع جديد</button>
+            </div>
+        </header>
+
+        <!-- Projects Grid -->
+        <section class="projects-section">
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>تطوير تطبيق الجوال</h3>
+                        <span class="status-badge status-active">قيد التنفيذ</span>
+                    </div>
+                    <p class="project-desc">تطوير تطبيق iOS و Android شامل</p>
+                    
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="label">الموعد النهائي:</span>
+                            <span class="value">15 مايو 2026</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label">الأولوية:</span>
+                            <span class="priority high">عالية</span>
+                        </div>
+                    </div>
+
+                    <div class="project-progress">
+                        <div class="progress-label">
+                            <span>التقدم</span>
+                            <span class="percent">65%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="team-section">
+                            <span class="team-label">الفريق:</span>
+                            <div class="team-avatars">
+                                <div class="avatar-tiny">👨‍💻</div>
+                                <div class="avatar-tiny">👩‍💼</div>
+                                <div class="avatar-tiny">👨‍🎨</div>
+                            </div>
+                        </div>
+                        <button class="btn-mini">التفاصيل</button>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>تحديث المنصة</h3>
+                        <span class="status-badge status-active">قيد التنفيذ</span>
+                    </div>
+                    <p class="project-desc">تحسين الأداء والميزات الجديدة</p>
+                    
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="label">الموعد النهائي:</span>
+                            <span class="value">30 مارس 2026</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label">الأولوية:</span>
+                            <span class="priority medium">متوسطة</span>
+                        </div>
+                    </div>
+
+                    <div class="project-progress">
+                        <div class="progress-label">
+                            <span>التقدم</span>
+                            <span class="percent">42%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 42%"></div>
+                        </div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="team-section">
+                            <span class="team-label">الفريق:</span>
+                            <div class="team-avatars">
+                                <div class="avatar-tiny">👨‍💻</div>
+                                <div class="avatar-tiny">👨‍🎨</div>
+                            </div>
+                        </div>
+                        <button class="btn-mini">التفاصيل</button>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>تكامل الدفع</h3>
+                        <span class="status-badge status-completed">مكتمل</span>
+                    </div>
+                    <p class="project-desc">إضافة بوابات دفع متعددة</p>
+                    
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="label">الموعد النهائي:</span>
+                            <span class="value">20 مارس 2026</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label">الأولوية:</span>
+                            <span class="priority high">عالية</span>
+                        </div>
+                    </div>
+
+                    <div class="project-progress">
+                        <div class="progress-label">
+                            <span>التقدم</span>
+                            <span class="percent">100%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="team-section">
+                            <span class="team-label">الفريق:</span>
+                            <div class="team-avatars">
+                                <div class="avatar-tiny">👨‍💻</div>
+                                <div class="avatar-tiny">👩‍💼</div>
+                                <div class="avatar-tiny">👨‍🏭</div>
+                                <div class="avatar-tiny">+1</div>
+                            </div>
+                        </div>
+                        <button class="btn-mini">التفاصيل</button>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>تحسين الأمان</h3>
+                        <span class="status-badge status-active">قيد التنفيذ</span>
+                    </div>
+                    <p class="project-desc">فحص أمان شامل وتحديثات</p>
+                    
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="label">الموعد النهائي:</span>
+                            <span class="value">10 أبريل 2026</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label">الأولوية:</span>
+                            <span class="priority high">عالية</span>
+                        </div>
+                    </div>
+
+                    <div class="project-progress">
+                        <div class="progress-label">
+                            <span>التقدم</span>
+                            <span class="percent">55%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 55%"></div>
+                        </div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="team-section">
+                            <span class="team-label">الفريق:</span>
+                            <div class="team-avatars">
+                                <div class="avatar-tiny">👨‍💻</div>
+                            </div>
+                        </div>
+                        <button class="btn-mini">التفاصيل</button>
+                    </div>
+                </div>
+
+                <!-- Project Card 5 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>توثيق API</h3>
+                        <span class="status-badge status-active">قيد التنفيذ</span>
+                    </div>
+                    <p class="project-desc">إنشاء وتحديث توثيق شامل</p>
+                    
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="label">الموعد النهائي:</span>
+                            <span class="value">05 أبريل 2026</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label">الأولوية:</span>
+                            <span class="priority low">منخفضة</span>
+                        </div>
+                    </div>
+
+                    <div class="project-progress">
+                        <div class="progress-label">
+                            <span>التقدم</span>
+                            <span class="percent">80%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="team-section">
+                            <span class="team-label">الفريق:</span>
+                            <div class="team-avatars">
+                                <div class="avatar-tiny">👨‍💻</div>
+                                <div class="avatar-tiny">👨‍🏫</div>
+                            </div>
+                        </div>
+                        <button class="btn-mini">التفاصيل</button>
+                    </div>
+                </div>
+
+                <!-- Project Card 6 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>توسع السوق</h3>
+                        <span class="status-badge status-pending">قيد الانتظار</span>
+                    </div>
+                    <p class="project-desc">دخول أسواق جديدة وشراكات</p>
+                    
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="label">الموعد النهائي:</span>
+                            <span class="value">30 يونيو 2026</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label">الأولوية:</span>
+                            <span class="priority high">عالية</span>
+                        </div>
+                    </div>
+
+                    <div class="project-progress">
+                        <div class="progress-label">
+                            <span>التقدم</span>
+                            <span class="percent">15%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 15%"></div>
+                        </div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="team-section">
+                            <span class="team-label">الفريق:</span>
+                            <div class="team-avatars">
+                                <div class="avatar-tiny">👩‍💼</div>
+                                <div class="avatar-tiny">👨‍🏢</div>
+                            </div>
+                        </div>
+                        <button class="btn-mini">التفاصيل</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
