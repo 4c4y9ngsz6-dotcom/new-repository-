@@ -1,0 +1,1 @@
+# Assets Folder\n\nPlace images, icons, and other static files here.\n- `placeholder-hero.jpg`: Hero background placeholder.\n- `icons/`: SVG icons for services/pricing.\n\nIn production, replace placeholders with real assets.\n

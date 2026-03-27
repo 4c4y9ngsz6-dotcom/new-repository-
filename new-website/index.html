@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - منصة إدارة المشاريع</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon">📊</div>
+                <span>ProManage</span>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item active">
+                <span class="icon">📈</span>
+                <span>لوحة التحكم</span>
+            </a>
+            <a href="projects.html" class="nav-item">
+                <span class="icon">📁</span>
+                <span>المشاريع</span>
+            </a>
+            <a href="tasks.html" class="nav-item">
+                <span class="icon">✓</span>
+                <span>المهام</span>
+            </a>
+            <a href="insights.html" class="nav-item">
+                <span class="icon">💡</span>
+                <span>التحليلات</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <span class="icon">⚙️</span>
+                <span>الإعدادات</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <!-- Top Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>مرحباً بك مجدداً</h1>
+                <p class="subtitle">إليك ملخص نشاطك اليوم</p>
+            </div>
+            <div class="header-right">
+                <button class="btn btn-primary">+ مشروع جديد</button>
+                <div class="user-menu">
+                    <div class="avatar">👨‍💼</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <section class="dashboard-content">
+            <!-- KPI Cards -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <h3>الإيرادات</h3>
+                        <span class="kpi-icon">💰</span>
+                    </div>
+                    <div class="kpi-value">$48,500</div>
+                    <div class="kpi-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 78%"></div>
+                        </div>
+                        <span class="kpi-percent">78% من الهدف</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <h3>تقدم المشاريع</h3>
+                        <span class="kpi-icon">📊</span>
+                    </div>
+                    <div class="kpi-value">12 / 18</div>
+                    <div class="kpi-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 67%"></div>
+                        </div>
+                        <span class="kpi-percent">67% مكتمل</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <h3>المهام المعلقة</h3>
+                        <span class="kpi-icon">⏰</span>
+                    </div>
+                    <div class="kpi-value">23</div>
+                    <div class="kpi-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill red" style="width: 45%"></div>
+                        </div>
+                        <span class="kpi-percent">8 متأخرة</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <h3>أعضاء الفريق</h3>
+                        <span class="kpi-icon">👥</span>
+                    </div>
+                    <div class="kpi-value">14</div>
+                    <div class="kpi-progress">
+                        <div class="team-avatars">
+                            <div class="avatar-small">👨‍💻</div>
+                            <div class="avatar-small">👩‍💼</div>
+                            <div class="avatar-small">👨‍🎨</div>
+                            <div class="avatar-small">+11</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Two Column Layout -->
+            <div class="dashboard-grid">
+                <!-- Left Column -->
+                <div class="left-column">
+                    <!-- Activity Feed -->
+                    <div class="card activity-card">
+                        <div class="card-header">
+                            <h2>آخر النشاطات</h2>
+                            <button class="btn-icon">📍</button>
+                        </div>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-time">منذ قليل</div>
+                                <div class="activity-content">
+                                    <strong>محمد أحمد</strong> أضاف مهمة جديدة في <strong>تطوير API</strong>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-time">منذ ساعة</div>
+                                <div class="activity-content">
+                                    <strong>فاطمة طارق</strong> أكملت مرحلة <strong>التصميم الأولي</strong>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-time">اليوم</div>
+                                <div class="activity-content">
+                                    <strong>علي محسن</strong> علق على <strong>مراجعة الكود</strong>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-time">أمس</div>
+                                <div class="activity-content">
+                                    <strong>نور الدين</strong> أنشأ مشروع جديد <strong>تطبيق الجوال</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="right-column">
+                    <!-- Priority Alerts -->
+                    <div class="card alerts-card">
+                        <div class="card-header">
+                            <h2>التنبيهات الهامة</h2>
+                        </div>
+                        <div class="alerts-list">
+                            <div class="alert alert-danger">
+                                <span class="alert-icon">🔴</span>
+                                <div class="alert-content">
+                                    <strong>مهام متأخرة</strong>
+                                    <p>8 مهام تجاوزت موعدها النهائي</p>
+                                </div>
+                                <button class="btn-mini">عرض</button>
+                            </div>
+                            <div class="alert alert-warning">
+                                <span class="alert-icon">🟡</span>
+                                <div class="alert-content">
+                                    <strong>موارد غير كافية</strong>
+                                    <p>مشروع "تحديث المنصة" يحتاج موارد إضافية</p>
+                                </div>
+                                <button class="btn-mini">تعيين</button>
+                            </div>
+                            <div class="alert alert-success">
+                                <span class="alert-icon">🟢</span>
+                                <div class="alert-content">
+                                    <strong>مشروع مكتمل</strong>
+                                    <p>"تكامل الدفع" اكتمل قبل الموعد بيوم</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="card stats-card">
+                        <div class="card-header">
+                            <h2>إحصائيات سريعة</h2>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number">4.8/5</div>
+                                <div class="stat-label">متوسط الأداء</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">94%</div>
+                                <div class="stat-label">معدل الإنجاز</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">2.3 أيام</div>
+                                <div class="stat-label">متوسط التسليم</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

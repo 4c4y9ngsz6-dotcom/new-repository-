@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التحليلات - منصة إدارة المشاريع</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon">📊</div>
+                <span>ProManage</span>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <span class="icon">📈</span>
+                <span>لوحة التحكم</span>
+            </a>
+            <a href="projects.html" class="nav-item">
+                <span class="icon">📁</span>
+                <span>المشاريع</span>
+            </a>
+            <a href="tasks.html" class="nav-item">
+                <span class="icon">✓</span>
+                <span>المهام</span>
+            </a>
+            <a href="insights.html" class="nav-item active">
+                <span class="icon">💡</span>
+                <span>التحليلات</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <span class="icon">⚙️</span>
+                <span>الإعدادات</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <!-- Top Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>التحليلات والإحصائيات</h1>
+                <p class="subtitle">رؤى استراتيجية لاتخاذ القرارات</p>
+            </div>
+            <div class="header-right">
+                <select class="period-select">
+                    <option>هذا الشهر</option>
+                    <option>الشهر الماضي</option>
+                    <option>آخر 3 أشهر</option>
+                    <option>آخر 6 أشهر</option>
+                    <option>سنة كاملة</option>
+                </select>
+                <button class="btn btn-secondary">تصدير</button>
+            </div>
+        </header>
+
+        <!-- Insights Content -->
+        <section class="insights-content">
+            <!-- Key Metrics -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>إنتاجية الفريق</h3>
+                        <span class="trend-indicator up">↑ 12%</span>
+                    </div>
+                    <div class="metric-value">4.2/5</div>
+                    <p class="metric-desc">متوسط إنتاجية الفريق الأسبوعية</p>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>معدل الالتزام</h3>
+                        <span class="trend-indicator down">↓ 5%</span>
+                    </div>
+                    <div class="metric-value">87%</div>
+                    <p class="metric-desc">نسبة المهام المكتملة في الموعد</p>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>كفاءة الموارد</h3>
+                        <span class="trend-indicator up">↑ 8%</span>
+                    </div>
+                    <div class="metric-value">82%</div>
+                    <p class="metric-desc">استخدام الموارد المتاحة</p>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>رضا العملاء</h3>
+                        <span class="trend-indicator up">↑ 15%</span>
+                    </div>
+                    <div class="metric-value">4.6/5</div>
+                    <p class="metric-desc">متوسط تقييم العملاء</p>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-grid">
+                <!-- Timeline Chart -->
+                <div class="card chart-card">
+                    <div class="card-header">
+                        <h2>جدول المشاريع الزمني</h2>
+                    </div>
+                    <div class="timeline-chart">
+                        <div class="timeline-item">
+                            <div class="timeline-date">15 أبريل</div>
+                            <div class="timeline-block" style="width: 35%">
+                                <span>تطبيق الجوال</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">20 أبريل</div>
+                            <div class="timeline-block" style="width: 60%">
+                                <span>تحديث المنصة</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">25 أبريل</div>
+                            <div class="timeline-block" style="width: 80%">
+                                <span>توثيق API</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">10 مايو</div>
+                            <div class="timeline-block" style="width: 45%">
+                                <span>تحسين الأمان</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Goals & Risks -->
+                <div class="card goals-card">
+                    <div class="card-header">
+                        <h2>الأهداف والمخاطر</h2>
+                    </div>
+                    <div class="goals-list">
+                        <div class="goal-item">
+                            <div class="goal-status active">🎯</div>
+                            <div class="goal-content">
+                                <h4>زيادة الإيرادات 40%</h4>
+                                <p>الحالة: 78% من المسار</p>
+                            </div>
+                        </div>
+                        <div class="goal-item">
+                            <div class="goal-status warning">⚠️</div>
+                            <div class="goal-content">
+                                <h4>توسع السوق الدولي</h4>
+                                <p>الحالة: قد تتأخر بسبب التكاليف</p>
+                            </div>
+                        </div>
+                        <div class="goal-item">
+                            <div class="goal-status success">✓</div>
+                            <div class="goal-content">
+                                <h4>تحسين رضا العملاء</h4>
+                                <p>الحالة: متقدم على الجدول</p>
+                            </div>
+                        </div>
+                        <div class="goal-item">
+                            <div class="goal-status risk">🔴</div>
+                            <div class="goal-content">
+                                <h4>مخاطر الأمان</h4>
+                                <p>الخطورة: عالية - تحتاج انتباه فوري</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Performance -->
+            <div class="card performance-card">
+                <div class="card-header">
+                    <h2>أداء أعضاء الفريق</h2>
+                </div>
+                <div class="performance-table">
+                    <div class="perf-item">
+                        <div class="perf-member">
+                            <span class="avatar-small">👨‍💻</span>
+                            <span class="member-name">محمد أحمد</span>
+                        </div>
+                        <div class="perf-stats">
+                            <div class="stat">
+                                <span class="stat-label">المهام المكتملة</span>
+                                <span class="stat-value">24</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">الإنتاجية</span>
+                                <span class="stat-value">4.8/5</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">معدل الالتزام</span>
+                                <span class="stat-value">95%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="perf-item">
+                        <div class="perf-member">
+                            <span class="avatar-small">👩‍💼</span>
+                            <span class="member-name">فاطمة طارق</span>
+                        </div>
+                        <div class="perf-stats">
+                            <div class="stat">
+                                <span class="stat-label">المهام المكتملة</span>
+                                <span class="stat-value">18</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">الإنتاجية</span>
+                                <span class="stat-value">4.5/5</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">معدل الالتزام</span>
+                                <span class="stat-value">88%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="perf-item">
+                        <div class="perf-member">
+                            <span class="avatar-small">👨‍🎨</span>
+                            <span class="member-name">علي محسن</span>
+                        </div>
+                        <div class="perf-stats">
+                            <div class="stat">
+                                <span class="stat-label">المهام المكتملة</span>
+                                <span class="stat-value">16</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">الإنتاجية</span>
+                                <span class="stat-value">4.3/5</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">معدل الالتزام</span>
+                                <span class="stat-value">82%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="perf-item">
+                        <div class="perf-member">
+                            <span class="avatar-small">👨‍🏭</span>
+                            <span class="member-name">نور الدين</span>
+                        </div>
+                        <div class="perf-stats">
+                            <div class="stat">
+                                <span class="stat-label">المهام المكتملة</span>
+                                <span class="stat-value">21</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">الإنتاجية</span>
+                                <span class="stat-value">4.7/5</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">معدل الالتزام</span>
+                                <span class="stat-value">92%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

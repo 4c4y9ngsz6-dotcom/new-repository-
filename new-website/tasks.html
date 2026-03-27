@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المهام - منصة إدارة المشاريع</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon">📊</div>
+                <span>ProManage</span>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <span class="icon">📈</span>
+                <span>لوحة التحكم</span>
+            </a>
+            <a href="projects.html" class="nav-item">
+                <span class="icon">📁</span>
+                <span>المشاريع</span>
+            </a>
+            <a href="tasks.html" class="nav-item active">
+                <span class="icon">✓</span>
+                <span>المهام</span>
+            </a>
+            <a href="insights.html" class="nav-item">
+                <span class="icon">💡</span>
+                <span>التحليلات</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <span class="icon">⚙️</span>
+                <span>الإعدادات</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <!-- Top Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>إدارة المهام</h1>
+                <p class="subtitle">نموذج كانبان للتدفق الفعال</p>
+            </div>
+            <div class="header-right">
+                <input type="search" class="search-input" placeholder="بحث عن مهمة...">
+                <button class="btn btn-primary">+ مهمة جديدة</button>
+            </div>
+        </header>
+
+        <!-- Kanban Board -->
+        <section class="kanban-section">
+            <div class="kanban-board">
+                <!-- Column 1: To Do -->
+                <div class="kanban-column">
+                    <div class="column-header">
+                        <h3>للقيام به</h3>
+                        <span class="task-count">8</span>
+                    </div>
+                    
+                    <div class="tasks-list">
+                        <div class="task-card">
+                            <div class="task-priority high">●</div>
+                            <h4>تصميم الصفحة الرئيسية</h4>
+                            <p class="task-desc">إنشاء wireframe وتصميم UI/UX</p>
+                            <div class="task-meta">
+                                <span class="priority-badge high">عالية</span>
+                                <span class="due-date">17/04</span>
+                            </div>
+                            <div class="task-assignee">
+                                <div class="avatar-small">👨‍🎨</div>
+                            </div>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-priority medium">●</div>
+                            <h4>كتابة متطلبات البرنامج</h4>
+                            <p class="task-desc">توثيق جميع الميزات المطلوبة</p>
+                            <div class="task-meta">
+                                <span class="priority-badge medium">متوسطة</span>
+                                <span class="due-date">19/04</span>
+                            </div>
+                            <div class="task-assignee">
+                                <div class="avatar-small">👩‍💼</div>
+                            </div>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-priority low">●</div>
+                            <h4>إعداد بيئة التطوير</h4>
+                            <p class="task-desc">إعداد الأدوات والمكتبات</p>
+                            <div class="task-meta">
+                                <span class="priority-badge low">منخفضة</span>
+                                <span class="due-date">22/04</span>
+                            </div>
+                            <div class="task-assignee">
+                                <div class="avatar-small">👨‍💻</div>
+                            </div>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-priority high">●</div>
+                            <h4>تحديد معايير الجودة</h4>
+                            <p class="task-desc">وضع معايير واختبارات الجودة</p>
+                            <div class="task-meta">
+                                <span class="priority-badge high">عالية</span>
+                                <span class="due-date">20/04</span>
+                            </div>
+                            <div class="task-assignee">
+                                <div class="avatar-small">👨‍🏭</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: In Progress -->
+                <div class="kanban-column">
+                    <div class="column-header">
+                        <h3>قيد الإنجاز</h3>
+                        <span class="task-count">5</span>
+                    </div>
+                    
+                    <div class="tasks-list">
+                        <div class="task-card in-progress">
+                            <div class="task-priority high">●</div>
+                            <h4>تطوير نظام المصادقة</h4>
+                            <p class="task-desc">تنفيذ نظام تسجيل دخول آمن</p>
+                            <div class="task-meta">
+                                <span class="priority-badge high">عالية</span>
+                                <span class="due-date">18/04</span>
+                            </div>
+                            <div class="task-assignee">
+                                <div class="avatar-small">👨‍💻</div>
+                            </div>
+                            <div class="progress-mini">
+                                <div class="progress-bar-mini" style="width: 60%"></div>
+                            </div>
+                        </div>
+
+                        <div class="task-card in-progress">
+                            <div class="task-priority medium">●</div>
+                            <h4>تصميم قاعدة البيانات</h4>
+                            <p class="task-desc">نمذجة البيانات والعلاقات</p>
+                            <div class="task-meta">
+                                <span class="priority-badge medium">متوسطة</span>
+                                <span class="due-date">20/04</span>
+                            </div>
+                            <div class="task-assignee">
+                                <div class="avatar-small">👨‍💻</div>
+                            </div>
+                            <div class="progress-mini">
+                                <div class="progress-bar-mini" style="width: 75%"></div>
+                            </div>
+                        </div>
+
+                        <div class="task-card in-progress">
+                            <div class="task-priority high">●</div>
+                            <h4>تطوير API الرئيسية</h4>
+                            <p class="task-desc">بناء نقاط النهاية الأساسية</p>
+                            <div class="task-meta">
+                                <span class="priority-badge high">عالية</span>
+                                <span class="due-date">25/04</span>
+                            </div>
+                            <div class="task-assignee">
+                                <div class="avatar-small">👨‍💻</div>
+                            </div>
+                            <div class="progress-mini">
+                                <div class="progress-bar-mini" style="width: 45%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3: Review -->
+                <div class="kanban-column">
+                    <div class="column-header">
+                        <h3>قيد المراجعة</h3>
+                        <span class="task-count">3</span>
+                    </div>
+                    
+                    <div class="tasks-list">
+                        <div class="task-card review">
+                            <div class="task-priority medium">●</div>
+                            <h4>اختبار وحدة المستخدم</h4>
+                            <p class="task-desc">اختبارات شاملة لنظام المستخدم</p>
+                            <div class="task-meta">
+                                <span class="priority-badge medium">متوسطة</span>
+                                <span class="due-date">17/04</span>
+                            </div>
+                            <div class="task-assignee">
+                                <div class="avatar-small">👨‍🏭</div>
+                            </div>
+                        </div>
+
+                        <div class="task-card review">
+                            <div class="task-priority low">●</div>
+                            <h4>مراجعة الكود الأمني</h4>
+                            <p class="task-desc">فحص شامل للأمان والثغرات</p>
+                            <div class="task-meta">
+                                <span class="priority-badge low">منخفضة</span>
+                                <span class="due-date">21/04</span>
+                            </div>
+                            <div class="task-assignee">
+                                <div class="avatar-small">👨‍💻</div>
+                            </div>
+                        </div>
+
+                        <div class="task-card review">
+                            <div class="task-priority medium">●</div>
+                            <h4>مراجعة واجهة المستخدم</h4>
+                            <p class="task-desc">التحقق من التصميم والتفاعلات</p>
+                            <div class="task-meta">
+                                <span class="priority-badge medium">متوسطة</span>
+                                <span class="due-date">19/04</span>
+                            </div>
+                            <div class="task-assignee">
+                                <div class="avatar-small">👨‍🎨</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 4: Done -->
+                <div class="kanban-column">
+                    <div class="column-header">
+                        <h3>مكتمل</h3>
+                        <span class="task-count">12</span>
+                    </div>
+                    
+                    <div class="tasks-list">
+                        <div class="task-card done">
+                            <div class="task-priority high">●</div>
+                            <h4>إعداد مستودع Git</h4>
+                            <p class="task-desc">إنشاء مستودع وفروع المشروع</p>
+                            <div class="task-meta">
+                                <span class="priority-badge high">عالية</span>
+                                <span class="due-date">15/04</span>
+                            </div>
+                            <div class="task-assignee">
+                                <div class="avatar-small">👨‍💻</div>
+                            </div>
+                        </div>
+
+                        <div class="task-card done">
+                            <div class="task-priority medium">●</div>
+                            <h4>كتابة خطة المشروع</h4>
+                            <p class="task-desc">توثيق جدول زمني ونطاق</p>
+                            <div class="task-meta">
+                                <span class="priority-badge medium">متوسطة</span>
+                                <span class="due-date">14/04</span>
+                            </div>
+                            <div class="task-assignee">
+                                <div class="avatar-small">👩‍💼</div>
+                            </div>
+                        </div>
+
+                        <div class="task-card done">
+                            <div class="task-priority low">●</div>
+                            <h4>إنشاء لوحة مشروع</h4>
+                            <p class="task-desc">إعداد نظام تتبع المهام</p>
+                            <div class="task-meta">
+                                <span class="priority-badge low">منخفضة</span>
+                                <span class="due-date">13/04</span>
+                            </div>
+                            <div class="task-assignee">
+                                <div class="avatar-small">👩‍💼</div>
+                            </div>
+                        </div>
+
+                        <div class="task-card done">
+                            <div class="task-priority high">●</div>
+                            <h4>عقد اجتماع الفريق الأول</h4>
+                            <p class="task-desc">مناقشة الأهداف والتوقعات</p>
+                            <div class="task-meta">
+                                <span class="priority-badge high">عالية</span>
+                                <span class="due-date">12/04</span>
+                            </div>
+                            <div class="task-assignee">
+                                <div class="avatar-small">👩‍💼</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

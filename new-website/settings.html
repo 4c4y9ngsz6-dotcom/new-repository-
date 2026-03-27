@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإعدادات - منصة إدارة المشاريع</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon">📊</div>
+                <span>ProManage</span>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <span class="icon">📈</span>
+                <span>لوحة التحكم</span>
+            </a>
+            <a href="projects.html" class="nav-item">
+                <span class="icon">📁</span>
+                <span>المشاريع</span>
+            </a>
+            <a href="tasks.html" class="nav-item">
+                <span class="icon">✓</span>
+                <span>المهام</span>
+            </a>
+            <a href="insights.html" class="nav-item">
+                <span class="icon">💡</span>
+                <span>التحليلات</span>
+            </a>
+            <a href="settings.html" class="nav-item active">
+                <span class="icon">⚙️</span>
+                <span>الإعدادات</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <!-- Top Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>الإعدادات</h1>
+                <p class="subtitle">إدارة الحساب والفريق والصلاحيات</p>
+            </div>
+        </header>
+
+        <!-- Settings Content -->
+        <section class="settings-content">
+            <div class="settings-grid">
+                <!-- Left: Menu -->
+                <aside class="settings-menu">
+                    <button class="settings-menu-item active" onclick="showSection('profile')">👤 الملف الشخصي</button>
+                    <button class="settings-menu-item" onclick="showSection('company')">🏢 إعدادات الشركة</button>
+                    <button class="settings-menu-item" onclick="showSection('team')">👥 إدارة الفريق</button>
+                    <button class="settings-menu-item" onclick="showSection('security')">🔒 الأمان والوصول</button>
+                    <button class="settings-menu-item" onclick="showSection('notifications')">🔔 التنبيهات</button>
+                    <button class="settings-menu-item" onclick="showSection('appearance')">🎨 المظهر</button>
+                </aside>
+
+                <!-- Right: Content -->
+                <div class="settings-panels">
+                    <!-- Profile Settings -->
+                    <div class="settings-section" id="profile">
+                        <h2>الملف الشخصي</h2>
+                        <div class="card settings-card">
+                            <div class="profile-header">
+                                <div class="avatar-large">
+                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="50" cy="50" r="50" fill="#667eea"/>
+                                        <circle cx="50" cy="35" r="18" fill="#fff"/>
+                                        <path d="M30 65 Q30 55 50 55 Q70 55 70 65 Q70 80 50 80 Q30 80 30 65" fill="#fff"/>
+                                    </svg>
+                                </div>
+                                <div class="profile-info">
+                                    <h3>محمد علي</h3>
+                                    <p>مدير المشاريع</p>
+                                    <button class="btn btn-secondary">تغيير الصورة</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>الاسم الكامل</label>
+                                <input type="text" value="محمد علي" class="form-input">
+                            </div>
+
+                            <div class="form-group">
+                                <label>البريد الإلكتروني</label>
+                                <input type="email" value="mohammad@example.com" class="form-input">
+                            </div>
+
+                            <div class="form-group">
+                                <label>رقم الهاتف</label>
+                                <input type="tel" value="+966 50 123 4567" class="form-input">
+                            </div>
+
+                            <div class="form-group">
+                                <label>الوظيفة</label>
+                                <input type="text" value="مدير المشاريع" class="form-input">
+                            </div>
+
+                            <div class="form-group">
+                                <label>الورابط الاجتماعية</label>
+                                <div class="social-links">
+                                    <input type="url" placeholder="LinkedIn" class="form-input" value="https://linkedin.com/in/mohammad">
+                                    <input type="url" placeholder="Twitter" class="form-input" value="https://twitter.com/mohammad">
+                                    <input type="url" placeholder="GitHub" class="form-input" value="https://github.com/mohammad">
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary">حفظ التغييرات</button>
+                        </div>
+                    </div>
+
+
+                    <!-- Company Settings -->
+                    <div class="settings-section hidden" id="company">
+                        <h2>إعدادات الشركة</h2>
+                        <div class="card settings-card">
+                            <div class="form-group">
+                                <label>اسم الشركة</label>
+                                <input type="text" value="تقنيات المستقبل" class="form-input">
+                            </div>
+
+                            <div class="form-group">
+                                <label>الموقع الإلكتروني</label>
+                                <input type="url" value="www.future-tech.com" class="form-input">
+                            </div>
+
+                            <div class="form-group">
+                                <label>الصناعة</label>
+                                <select class="form-input">
+                                    <option selected>تكنولوجيا المعلومات</option>
+                                    <option>الخدمات المالية</option>
+                                    <option>الصحة</option>
+                                    <option>التجارة الإلكترونية</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>حجم الفريق</label>
+                                <select class="form-input">
+                                    <option>1-10</option>
+                                    <option selected>11-50</option>
+                                    <option>51-200</option>
+                                    <option>200+</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>العملة الافتراضية</label>
+                                <select class="form-input">
+                                    <option selected>ريال سعودي (SAR)</option>
+                                    <option>دولار أمريكي (USD)</option>
+                                    <option>يورو (EUR)</option>
+                                </select>
+                            </div>
+
+                            <button class="btn btn-primary">حفظ التغييرات</button>
+                        </div>
+                    </div>
+
+                    <!-- Team Management -->
+                    <div class="settings-section hidden" id="team">
+                        <h2>إدارة الفريق</h2>
+                        <div class="card settings-card">
+                            <div class="team-header">
+                                <h3>أعضاء الفريق (14)</h3>
+                                <button class="btn btn-primary">+ إضافة عضو</button>
+                            </div>
+
+                            <div class="team-members">
+                                <div class="team-member">
+                                    <div class="member-info">
+                                        <div class="avatar-small">👨‍💻</div>
+                                        <div>
+                                            <h4>محمد أحمد</h4>
+                                            <p>مهندس برمجيات</p>
+                                        </div>
+                                    </div>
+                                    <div class="member-role">
+                                        <select class="role-select">
+                                            <option selected>مدير</option>
+                                            <option>محرر</option>
+                                            <option>عارض</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn-mini danger">حذف</button>
+                                </div>
+
+                                <div class="team-member">
+                                    <div class="member-info">
+                                        <div class="avatar-small">👩‍💼</div>
+                                        <div>
+                                            <h4>فاطمة طارق</h4>
+                                            <p>منتج إدارة</p>
+                                        </div>
+                                    </div>
+                                    <div class="member-role">
+                                        <select class="role-select">
+                                            <option>مدير</option>
+                                            <option selected>محرر</option>
+                                            <option>عارض</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn-mini danger">حذف</button>
+                                </div>
+
+                                <div class="team-member">
+                                    <div class="member-info">
+                                        <div class="avatar-small">👨‍🎨</div>
+                                        <div>
+                                            <h4>علي محسن</h4>
+                                            <p>مصمم UI/UX</p>
+                                        </div>
+                                    </div>
+                                    <div class="member-role">
+                                        <select class="role-select">
+                                            <option>مدير</option>
+                                            <option selected>محرر</option>
+                                            <option>عارض</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn-mini danger">حذف</button>
+                                </div>
+
+                                <div class="team-member">
+                                    <div class="member-info">
+                                        <div class="avatar-small">👨‍🏭</div>
+                                        <div>
+                                            <h4>نور الدين</h4>
+                                            <p>مهندس اختبار</p>
+                                        </div>
+                                    </div>
+                                    <div class="member-role">
+                                        <select class="role-select">
+                                            <option>مدير</option>
+                                            <option selected>محرر</option>
+                                            <option>عارض</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn-mini danger">حذف</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Settings -->
+                    <div class="settings-section hidden" id="security">
+                        <h2>الأمان والوصول</h2>
+                        <div class="card settings-card">
+                            <h3>كلمة المرور</h3>
+                            <div class="form-group">
+                                <label>كلمة المرور الحالية</label>
+                                <input type="password" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>كلمة المرور الجديدة</label>
+                                <input type="password" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>تأكيد كلمة المرور</label>
+                                <input type="password" class="form-input">
+                            </div>
+                            <button class="btn btn-primary">تحديث كلمة المرور</button>
+
+                            <hr class="divider">
+
+                            <h3>المصادقة الثنائية</h3>
+                            <div class="toggle-setting">
+                                <span>تفعيل المصادقة الثنائية</span>
+                                <label class="ui-switch">
+                                    <input type="checkbox" checked>
+                                    <div class="slider">
+                                        <div class="circle"></div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <hr class="divider">
+
+                            <h3>الأجهزة النشطة</h3>
+                            <div class="active-devices">
+                                <div class="device-item">
+                                    <div class="device-icon">💻</div>
+                                    <div class="device-info">
+                                        <h4>MacBook Pro</h4>
+                                        <p>آخر دخول: اليوم في 2:30 م</p>
+                                    </div>
+                                    <button class="btn-mini">تسجيل الخروج</button>
+                                </div>
+                                <div class="device-item">
+                                    <div class="device-icon">📱</div>
+                                    <div class="device-info">
+                                        <h4>iPhone 14</h4>
+                                        <p>آخر دخول: أمس في 10:15 ص</p>
+                                    </div>
+                                    <button class="btn-mini">تسجيل الخروج</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications Settings -->
+                    <div class="settings-section hidden" id="notifications">
+                        <h2>التنبيهات</h2>
+                        <div class="card settings-card">
+                            <div class="notification-setting">
+                                <div>
+                                    <h4>تنبيهات المهام</h4>
+                                    <p>إخطارك بالمهام الجديدة والتحديثات</p>
+                                </div>
+                                <label class="ui-switch">
+                                    <input type="checkbox" checked>
+                                    <div class="slider">
+                                        <div class="circle"></div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="notification-setting">
+                                <div>
+                                    <h4>تنبيهات المشروع</h4>
+                                    <p>إخطارك بمراحل المشروع والمواعيد النهائية</p>
+                                </div>
+                                <label class="ui-switch">
+                                    <input type="checkbox" checked>
+                                    <div class="slider">
+                                        <div class="circle"></div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="notification-setting">
+                                <div>
+                                    <h4>تنبيهات الفريق</h4>
+                                    <p>إخطارك بنشاط الفريق والتعليقات</p>
+                                </div>
+                                <label class="ui-switch">
+                                    <input type="checkbox" checked>
+                                    <div class="slider">
+                                        <div class="circle"></div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="notification-setting">
+                                <div>
+                                    <h4>رسائل البريد الإلكتروني</h4>
+                                    <p>تلقي رسائل بريد إلكترونية للتحديثات المهمة</p>
+                                </div>
+                                <label class="ui-switch">
+                                    <input type="checkbox" checked>
+                                    <div class="slider">
+                                        <div class="circle"></div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="notification-setting">
+                                <div>
+                                    <h4>التنبيهات الفورية</h4>
+                                    <p>تلقي تنبيهات فورية بالأحداث العاجلة</p>
+                                </div>
+                                <label class="ui-switch">
+                                    <input type="checkbox">
+                                    <div class="slider">
+                                        <div class="circle"></div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Appearance Settings -->
+                    <div class="settings-section hidden" id="appearance">
+                        <h2>المظهر</h2>
+                        <div class="card settings-card">
+                            <h3>الموضوع</h3>
+                            <div class="theme-select">
+                                <label class="theme-option selected">
+                                    <input type="radio" name="theme" value="light" checked>
+                                    <span class="theme-label">☀️ فاتح</span>
+                                </label>
+                                <label class="theme-option">
+                                    <input type="radio" name="theme" value="dark">
+                                    <span class="theme-label">🌙 مظلم</span>
+                                </label>
+                                <label class="theme-option">
+                                    <input type="radio" name="theme" value="auto">
+                                    <span class="theme-label">⚙️ تلقائي</span>
+                                </label>
+                            </div>
+
+                            <hr class="divider">
+
+                            <h3>كثافة العرض</h3>
+                            <div class="density-select">
+                                <label>
+                                    <input type="radio" name="density" value="compact">
+                                    <span>مدمج</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="density" value="normal" checked>
+                                    <span>عادي</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="density" value="spacious">
+                                    <span>متسع</span>
+                                </label>
+                            </div>
+
+                            <hr class="divider">
+
+                            <h3>اللغة</h3>
+                            <select class="form-input">
+                                <option selected>العربية</option>
+                                <option>English</option>
+                                <option>Français</option>
+                                <option>Español</option>
+                            </select>
+
+                            <button class="btn btn-primary">حفظ التغييرات</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
