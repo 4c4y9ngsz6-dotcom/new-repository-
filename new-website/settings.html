@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإعدادات - منصة إدارة المشاريع</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .settings-wrapper {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 2rem;
+        }
+
+        .settings-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .settings-menu-item {
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: right;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-weight: 500;
+        }
+
+        .settings-menu-item:hover {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .settings-menu-item.active {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+
+        .settings-panels {
+            width: 100%;
+        }
+
+        .settings-section {
+            display: none;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .settings-section.active {
+            display: block;
+        }
+
+        .settings-section h2 {
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: var(--bg-main);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .form-input select {
+            cursor: pointer;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 1024px) {
+            .settings-wrapper {
+                grid-template-columns: 180px 1fr;
+                gap: 1.5rem;
+            }
+
+            .settings-menu-item {
+                padding: 0.6rem 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .settings-wrapper {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .settings-menu {
+                position: relative;
+                top: 0;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 0.5rem;
+                sticky: initial;
+                margin-bottom: 1.5rem;
+                padding-bottom: 1.5rem;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .settings-menu-item {
+                padding: 0.6rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon">📊</div>
+                <span>ProManage</span>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <span class="icon">📈</span>
+                <span>لوحة التحكم</span>
+            </a>
+            <a href="projects.html" class="nav-item">
+                <span class="icon">📁</span>
+                <span>المشاريع</span>
+            </a>
+            <a href="tasks.html" class="nav-item">
+                <span class="icon">✓</span>
+                <span>المهام</span>
+            </a>
+            <a href="insights.html" class="nav-item">
+                <span class="icon">💡</span>
+                <span>التحليلات</span>
+            </a>
+            <a href="settings.html" class="nav-item active">
+                <span class="icon">⚙️</span>
+                <span>الإعدادات</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <!-- Top Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>الإعدادات</h1>
+                <p class="subtitle">إدارة الحساب والفريق والصلاحيات</p>
+            </div>
+            <div class="header-right">
+                <button class="btn btn-primary" onclick="showNotification('تم حفظ جميع التغييرات', 'success')">💾 حفظ التغييرات</button>
+            </div>
+        </header>
+
+        <!-- Settings Content -->
+        <section class="dashboard-content">
+            <div class="settings-wrapper">
+                <!-- Settings Menu -->
+                <aside class="settings-menu">
+                    <button class="settings-menu-item active" onclick="openSettings(event, 'profile')">👤 الملف الشخصي</button>
+                    <button class="settings-menu-item" onclick="openSettings(event, 'company')">🏢 الشركة</button>
+                    <button class="settings-menu-item" onclick="openSettings(event, 'team')">👥 الفريق</button>
+                    <button class="settings-menu-item" onclick="openSettings(event, 'security')">🔒 الأمان</button>
+                    <button class="settings-menu-item" onclick="openSettings(event, 'notifications')">🔔 التنبيهات</button>
+                    <button class="settings-menu-item" onclick="openSettings(event, 'appearance')">🎨 المظهر</button>
+                </aside>
+
+                <!-- Settings Panels -->
+                <div class="settings-panels">
+                    <!-- Profile Section -->
+                    <div id="profile" class="settings-section active">
+                        <h2>الملف الشخصي</h2>
+                        <div class="card">
+                            <div class="form-group">
+                                <label>الاسم الكامل</label>
+                                <input type="text" class="form-input" value="محمد علي" placeholder="أدخل الاسم الكامل">
+                            </div>
+
+                            <div class="form-group">
+                                <label>البريد الإلكتروني</label>
+                                <input type="email" class="form-input" value="mohammad@example.com" placeholder="أدخل البريد الإلكتروني">
+                            </div>
+
+                            <div class="form-group">
+                                <label>رقم الهاتف</label>
+                                <input type="tel" class="form-input" value="+966 50 123 4567" placeholder="أدخل رقم الهاتف">
+                            </div>
+
+                            <div class="form-group">
+                                <label>الوظيفة</label>
+                                <input type="text" class="form-input" value="مدير المشاريع" placeholder="أدخل الوظيفة">
+                            </div>
+
+                            <button class="btn btn-primary" style="width: 100%;" onclick="showNotification('تم تحديث الملف الشخصي', 'success')">✓ حفظ التغييرات</button>
+                        </div>
+                    </div>
+
+                    <!-- Company Section -->
+                    <div id="company" class="settings-section">
+                        <h2>إعدادات الشركة</h2>
+                        <div class="card">
+                            <div class="form-group">
+                                <label>اسم الشركة</label>
+                                <input type="text" class="form-input" value="تقنيات المستقبل" placeholder="أدخل اسم الشركة">
+                            </div>
+
+                            <div class="form-group">
+                                <label>الموقع الإلكتروني</label>
+                                <input type="url" class="form-input" value="https://example.com" placeholder="أدخل الموقع الإلكتروني">
+                            </div>
+
+                            <div class="form-group">
+                                <label>مجال العمل</label>
+                                <input type="text" class="form-input" value="تطوير برمجيات" placeholder="أدخل مجال العمل">
+                            </div>
+
+                            <div class="form-group">
+                                <label>عدد الموظفين</label>
+                                <input type="number" class="form-input" value="14" placeholder="أدخل عدد الموظفين">
+                            </div>
+
+                            <button class="btn btn-primary" style="width: 100%;" onclick="showNotification('تم تحديث بيانات الشركة', 'success')">✓ حفظ التغييرات</button>
+                        </div>
+                    </div>
+
+                    <!-- Team Section -->
+                    <div id="team" class="settings-section">
+                        <h2>إدارة الفريق</h2>
+                        <div class="card">
+                            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                                <div style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <div style="font-weight: 600;">علي محسن</div>
+                                        <div style="font-size: 0.9rem; color: var(--text-secondary);">مصمم UI/UX</div>
+                                    </div>
+                                    <button class="btn btn-secondary" style="font-size: 0.85rem;" onclick="showNotification('تمت إزالة العضو من الفريق', 'success')">🗑️ حذف</button>
+                                </div>
+
+                                <div style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <div style="font-weight: 600;">فاطمة أحمد</div>
+                                        <div style="font-size: 0.9rem; color: var(--text-secondary);">مطورة Full Stack</div>
+                                    </div>
+                                    <button class="btn btn-secondary" style="font-size: 0.85rem;" onclick="showNotification('تمت إزالة العضو من الفريق', 'success')">🗑️ حذف</button>
+                                </div>
+
+                                <div style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <div style="font-weight: 600;">ياسر عبدالله</div>
+                                        <div style="font-size: 0.9rem; color: var(--text-secondary);">مهندس DevOps</div>
+                                    </div>
+                                    <button class="btn btn-secondary" style="font-size: 0.85rem;" onclick="showNotification('تمت إزالة العضو من الفريق', 'success')">🗑️ حذف</button>
+                                </div>
+
+                                <button class="btn btn-primary" style="width: 100%;" onclick="showNotification('تم إرسال دعوة للعضو الجديد', 'success')">+ إضافة عضو جديد</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Section -->
+                    <div id="security" class="settings-section">
+                        <h2>الأمان والخصوصية</h2>
+                        <div class="card">
+                            <h3 style="margin: 1.5rem 0 1rem 0; color: var(--primary);">تغيير كلمة المرور</h3>
+                            <div class="form-group">
+                                <label>كلمة المرور الحالية</label>
+                                <input type="password" class="form-input" placeholder="أدخل كلمة المرور الحالية">
+                            </div>
+
+                            <div class="form-group">
+                                <label>كلمة المرور الجديدة</label>
+                                <input type="password" class="form-input" placeholder="أدخل كلمة المرور الجديدة">
+                            </div>
+
+                            <div class="form-group">
+                                <label>تأكيد كلمة المرور</label>
+                                <input type="password" class="form-input" placeholder="أعد إدخال كلمة المرور الجديدة">
+                            </div>
+
+                            <button class="btn btn-primary" style="width: 100%; margin-bottom: 2rem;" onclick="showNotification('تم تحديث كلمة المرور بنجاح', 'success')">✓ تحديث كلمة المرور</button>
+
+                            <h3 style="margin: 1.5rem 0 1rem 0; color: var(--primary);">المصادقة الثنائية</h3>
+                            <div style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                                <span>تفعيل المصادقة الثنائية (2FA)</span>
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer;" checked onchange="showNotification(this.checked ? '✓ تم تفعيل 2FA' : '✓ تم تعطيل 2FA', 'success')">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications Section -->
+                    <div id="notifications" class="settings-section">
+                        <h2>التنبيهات والإشعارات</h2>
+                        <div class="card">
+                            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                                <div style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <div style="font-weight: 600;">تنبيهات المشاريع</div>
+                                        <div style="font-size: 0.85rem; color: var(--text-secondary);">إخطارك بمراحل المشروع والمواعيد</div>
+                                    </div>
+                                    <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer;" checked onchange="showNotification('✓ تم تحديث إعدادات التنبيهات', 'success')">
+                                </div>
+
+                                <div style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <div style="font-weight: 600;">تنبيهات المهام</div>
+                                        <div style="font-size: 0.85rem; color: var(--text-secondary);">إخطارك بالمهام الجديدة والتحديثات</div>
+                                    </div>
+                                    <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer;" checked onchange="showNotification('✓ تم تحديث إعدادات التنبيهات', 'success')">
+                                </div>
+
+                                <div style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <div style="font-weight: 600;">تنبيهات الفريق</div>
+                                        <div style="font-size: 0.85rem; color: var(--text-secondary);">إخطارك بنشاط الفريق والتعليقات</div>
+                                    </div>
+                                    <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer;" checked onchange="showNotification('✓ تم تحديث إعدادات التنبيهات', 'success')">
+                                </div>
+
+                                <div style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <div style="font-weight: 600;">رسائل البريد الإلكتروني</div>
+                                        <div style="font-size: 0.85rem; color: var(--text-secondary);">تلقي رسائل بريد إلكترونية للتحديثات المهمة</div>
+                                    </div>
+                                    <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer;" checked onchange="showNotification('✓ تم تحديث إعدادات البريد', 'success')">
+                                </div>
+
+                                <div style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <div style="font-weight: 600;">التنبيهات الفورية</div>
+                                        <div style="font-size: 0.85rem; color: var(--text-secondary);">تلقي إشعارات فورية بالأحداث العاجلة</div>
+                                    </div>
+                                    <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer;" onchange="showNotification('✓ تم تحديث الإشعارات الفورية', 'success')">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Appearance Section -->
+                    <div id="appearance" class="settings-section">
+                        <h2>المظهر والعرض</h2>
+                        <div class="card">
+                            <h3 style="margin: 0 0 1.5rem 0; color: var(--primary);">اختر الموضوع</h3>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+                                <button class="btn btn-primary" style="padding: 1rem;" onclick="toggleTheme('light')">☀️ فاتح</button>
+                                <button class="btn btn-secondary" style="padding: 1rem;" onclick="toggleTheme('dark')">🌙 مظلم</button>
+                            </div>
+
+                            <h3 style="margin: 1.5rem 0 1rem 0; color: var(--primary);">اللغة</h3>
+                            <div class="form-group">
+                                <select class="form-input" onchange="showNotification('✓ تم تغيير اللغة', 'success')">
+                                    <option selected>العربية 🇸🇦</option>
+                                    <option>English 🇺🇸</option>
+                                    <option>Français 🇫🇷</option>
+                                    <option>Español 🇪🇸</option>
+                                </select>
+                            </div>
+
+                            <h3 style="margin: 1.5rem 0 1rem 0; color: var(--primary);">كثافة العرض</h3>
+                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+                                    <input type="radio" name="density" value="compact" onchange="showNotification('✓ تم تغيير كثافة العرض', 'success')"> مدمج
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+                                    <input type="radio" name="density" value="normal" checked onchange="showNotification('✓ تم تغيير كثافة العرض', 'success')"> عادي
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+                                    <input type="radio" name="density" value="spacious" onchange="showNotification('✓ تم تغيير كثافة العرض', 'success')"> متسع
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -317,13 +317,17 @@
         </section>
     </main>
 
+    <script src="script.js"></script>
     <script>
         function filterProjects(status) {
             // Update active button
             document.querySelectorAll('.btn-filter').forEach(btn => {
                 btn.classList.remove('active');
             });
-            event.target.classList.add('active');
+            if (event.target) {
+                event.target.classList.add('active');
+            }
+            showNotification(`تم التصفية حسب: ${status}`, 'success');
         }
     </script>
 </body>

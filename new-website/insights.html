@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التحليلات - منصة إدارة المشاريع</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon">📊</div>
+                <span>ProManage</span>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <span class="icon">📈</span>
+                <span>لوحة التحكم</span>
+            </a>
+            <a href="projects.html" class="nav-item">
+                <span class="icon">📁</span>
+                <span>المشاريع</span>
+            </a>
+            <a href="tasks.html" class="nav-item">
+                <span class="icon">✓</span>
+                <span>المهام</span>
+            </a>
+            <a href="insights.html" class="nav-item active">
+                <span class="icon">💡</span>
+                <span>التحليلات</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <span class="icon">⚙️</span>
+                <span>الإعدادات</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <!-- Top Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>التحليلات والرؤى</h1>
+                <p class="subtitle">تحليل شامل لأداء المشاريع والفريق</p>
+            </div>
+            <div class="header-right">
+                <button class="btn btn-primary" onclick="showNotification('تم تصدير التقرير', 'success')">📥 تصدير التقرير</button>
+            </div>
+        </header>
+
+        <!-- Analytics Section -->
+        <section class="dashboard-content">
+            <div class="kpi-grid">
+                <div class="card kpi-card">
+                    <div class="kpi-header">
+                        <h3>الإيرادات الشهرية</h3>
+                        <span class="kpi-icon">💰</span>
+                    </div>
+                    <div class="kpi-value">$125K</div>
+                    <div class="kpi-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 83%;"></div>
+                        </div>
+                        <span class="kpi-percent">+15% من الشهر السابق</span>
+                    </div>
+                </div>
+
+                <div class="card kpi-card">
+                    <div class="kpi-header">
+                        <h3>معدل الرضا</h3>
+                        <span class="kpi-icon">⭐</span>
+                    </div>
+                    <div class="kpi-value">4.8/5</div>
+                    <div class="kpi-progress">
+                        <span class="kpi-percent">رضا العملاء</span>
+                    </div>
+                </div>
+
+                <div class="card kpi-card">
+                    <div class="kpi-header">
+                        <h3>الإنتاجية</h3>
+                        <span class="kpi-icon">⚡</span>
+                    </div>
+                    <div class="kpi-value">92%</div>
+                    <div class="kpi-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 92%;"></div>
+                        </div>
+                        <span class="kpi-percent">معدل الإنتاجية</span>
+                    </div>
+                </div>
+
+                <div class="card kpi-card">
+                    <div class="kpi-header">
+                        <h3>الأهداف المحققة</h3>
+                        <span class="kpi-icon">🎯</span>
+                    </div>
+                    <div class="kpi-value">18/20</div>
+                    <div class="kpi-progress">
+                        <span class="kpi-percent">من أهداف الفصل</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 3rem; margin-bottom: 2rem; font-size: 1.5rem;">📈 نتائج الأداء</h2>
+
+            <div class="projects-grid">
+                <div class="card">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--primary);">أفضل المشاريع أداءً</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span>منصة التجارة الإلكترونية</span>
+                            <span style="font-weight: bold;">95%</span>
+                        </div>
+                        <div class="progress-bar" style="height: 8px;">
+                            <div class="progress-fill" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                        <span>تطبيق الجوال</span>
+                        <span style="font-weight: bold;">88%</span>
+                    </div>
+                    <div class="progress-bar" style="height: 8px;">
+                        <div class="progress-fill" style="width: 88%;"></div>
+                    </div>
+                    <div style="margin-top: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                        <span>نظام إدارة المحتوى</span>
+                        <span style="font-weight: bold;">72%</span>
+                    </div>
+                    <div class="progress-bar" style="height: 8px;">
+                        <div class="progress-fill" style="width: 72%;"></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--primary);">توزيع أعضاء الفريق</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>المطورون</span>
+                            <span style="font-weight: bold;">8 أشخاص</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>المصممون</span>
+                            <span style="font-weight: bold;">3 أشخاص</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>المديرون</span>
+                            <span style="font-weight: bold;">2 شخص</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>مختبرو الجودة</span>
+                            <span style="font-weight: bold;">1 شخص</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary" style="width: 100%; margin-top: 1.5rem;">عرض التفاصيل</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
